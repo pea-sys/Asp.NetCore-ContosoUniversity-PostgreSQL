@@ -10,7 +10,8 @@ namespace ContosoUniversity.Models
         [Display(Name = "Number")]
         public int CourseID { get; set; }
 
-        [StringLength(50, MinimumLength = 3)]
+        //[StringLength(50, MinimumLength = 3)] 
+        //CreateTableでERROR:  型"nvarchar"は存在しません
         public string Title { get; set; }
 
         [Range(0, 5)]
