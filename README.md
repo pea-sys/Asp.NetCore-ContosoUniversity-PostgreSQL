@@ -1,7 +1,7 @@
-# ベース
 [MicroSoft公式のASP.Net Coreのデータアクセスチュートリアル](https://docs.microsoft.com/ja-jp/aspnet/core/data/ef-rp/intro?view=aspnetcore-5.0&tabs=visual-studio)
 
 チュートリアルではSQL Serverを使用しているがPostgreSQLを使用  
+以下PostgreSQLに変更した際の作業メモ
 
 ### ■コネクション情報の隠蔽
 PostgreSQLを使用する場合、appsettings.jsonにコネクション情報を記載する必要がある。  
