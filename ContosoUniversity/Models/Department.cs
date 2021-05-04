@@ -25,8 +25,8 @@ namespace ContosoUniversity.Models
         public int? InstructorID { get; set; }
 
         [Timestamp]
-        public byte[] ConcurrencyToken { get; set; }
-        //public Guid ConcurrencyToken { get; set; } = Guid.NewGuid(); SQL Sever以外
+        //public byte[] ConcurrencyToken { get; set; }
+        public uint ConcurrencyToken { get; set; } //SQL Sever以外
 
         public Instructor Administrator { get; set; }
         public ICollection<Course> Courses { get; set; }

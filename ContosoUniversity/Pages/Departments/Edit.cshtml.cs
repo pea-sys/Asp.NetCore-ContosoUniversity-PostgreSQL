@@ -91,7 +91,7 @@ namespace ContosoUniversity.Pages.Departments
 
                     // Save the current ConcurrencyToken so next postback
                     // matches unless an new concurrency issue happens.
-                    Department.ConcurrencyToken = (byte[])dbValues.ConcurrencyToken;
+                    Department.ConcurrencyToken = dbValues.ConcurrencyToken;
                     // Clear the model error for the next postback.
                     ModelState.Remove($"{nameof(Department)}.{nameof(Department.ConcurrencyToken)}");
                 }

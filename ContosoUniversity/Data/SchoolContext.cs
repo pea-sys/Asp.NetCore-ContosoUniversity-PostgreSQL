@@ -28,9 +28,16 @@ namespace ContosoUniversity.Data
                     .WithMany(i => i.Courses);
             modelBuilder.Entity<Student>().ToTable(nameof(Student));
             modelBuilder.Entity<Instructor>().ToTable(nameof(Instructor));
+            /*modelBuilder.Entity<Department>()
+            .Property(d => d.ConcurrencyToken)
+            .IsConcurrencyToken();*/
             modelBuilder.Entity<Department>()
-    .Property(d => d.ConcurrencyToken)
-    .IsConcurrencyToken();
+        .Property(e => e.ConcurrencyToken)
+            .HasColumnName("xmin")
+            .HasColumnType("xid")
+            .ValueGeneratedOnAddOrUpdate()
+            .IsConcurrencyToken();
+
         }
     }
 }

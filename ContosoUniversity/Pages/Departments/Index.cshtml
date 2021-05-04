@@ -46,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.Administrator.FullName)
             </td>
             <td>
-                @Utility.GetLastChars(item.ConcurrencyToken)
+                @item.ConcurrencyToken
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.DepartmentID">Edit</a> |
