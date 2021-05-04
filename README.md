@@ -22,3 +22,9 @@ dotnet user-secrets set "Movies:ServiceApiKey" "12345"
 
 
 
+[備考]
+SQLServerからPostgreSQLに移行する際にPostgreSQLに対してSQLServer向けのテーブル定義構文を投げていた
+正しい解決方法は不明だがMigrationフォルダを全削除したら動作するようになった。
+
+
+
