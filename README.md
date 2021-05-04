@@ -1,14 +1,15 @@
-# Asp.NetCore-ContosoUniversity
+# ベース
 [MicroSoft公式のASP.Net Coreのデータアクセスチュートリアル](https://docs.microsoft.com/ja-jp/aspnet/core/data/ef-rp/intro?view=aspnetcore-5.0&tabs=visual-studio)
 
 チュートリアルではSQL Serverを使用しているがPostgreSQLを使用  
 
-
+### ■コネクション情報の隠蔽
 PostgreSQLを使用する場合、appsettings.jsonにコネクション情報を記載する必要がある。  
 https://faun.pub/asp-net-core-entity-framework-core-with-postgresql-code-first-d99b909796d7
 
 
-コネクション情報にはパスワード等含まれており、サーバで公開したくない場合が多いので、以下を参考にsecret.jsonで管理  
+コネクション情報にはパスワード等含まれいる。  
+公開したくない場合が多いので、以下を参考にsecret.jsonで管理  
 https://docs.microsoft.com/ja-jp/aspnet/core/security/app-secrets?view=aspnetcore-5.0&tabs=linux
 
 以下コマンドでWindowsだとC:\Users\user\AppData\Roaming\Microsoft\UserSecretsにsecret.jsonが格納されたフォルダが作成される
@@ -19,7 +20,9 @@ dotnet user-secrets init
 ```
 dotnet user-secrets set "Movies:ServiceApiKey" "12345"
 ```
-
+### ■同時実行制御
+SQLSeverだとConcurrency Tokenが既定で存在するようだが、PostgreSQLにはないのでシステム列のxmin(トランザクションid)で代用する  
+余談だが、xminが一緒であればトランザクションが同じになるので、SQLServerと異なり、複数列が同じTokenを持つ可能性はある(特に問題ないと思うが)
 
 
 [備考]  
