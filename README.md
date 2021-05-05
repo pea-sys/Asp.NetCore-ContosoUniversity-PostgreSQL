@@ -20,6 +20,8 @@ dotnet user-secrets init
 ```
 dotnet user-secrets set "Movies:ServiceApiKey" "12345"
 ```
+※ソリューションのコンテキストメニューからユーザーシークレットの管理を選択してもOK
+
 ### ■同時実行制御
 SQLSeverだとConcurrency Tokenが既定で存在するようだが、PostgreSQLにはないのでシステム列のxmin(トランザクションid)で代用する  
 余談だが、１つのトランザクションでxminが採番されるので、複数行が同じxminを持つ場合も多い(特に問題はない)
